@@ -11,7 +11,8 @@
 
 <nav>
   <a class="nav-monogram" href="index.html">S & D</a>
-  <ul class="nav-links">
+  <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+  <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="concept.html">What We're Celebrating</a></li>
     <li><a href="prewedding.html" class="active-nav">Pre-Wedding</a></li>
@@ -26,11 +27,12 @@
 </nav>
 
 <main id="prewedding" class="page-content">
-<div class="page-header">
+
+  <div class="page-header">
     <p class="page-eyebrow">Tuesday–Thursday · November 24–26</p>
     <h2 class="page-title">Pre-Wedding in Goa</h2>
     <div class="page-rule"></div>
-    <p style="font-size:13px; opacity:0.6; font-weight:300; margin-top:20px; max-width:600px; margin-left:auto; margin-right:auto; line-height:1.8;">For those who want to come early and spend a few days exploring Goa together before the celebrations begin. We highly recommend arriving Tuesday evening, November 24th to make the most of two full days together — but come whenever works for you. We'll head south to The Windflower on Friday morning when the wedding weekend kicks off.</p>
+    <p class="page-intro">For those who want to come early and spend a few days exploring Goa together before the celebrations begin. We highly recommend arriving Tuesday evening, November 24th to make the most of two full days together — but come whenever works for you. We'll head south to The Windflower on Friday morning when the wedding weekend kicks off.</p>
   </div>
 
   <div class="travel-sections">
@@ -53,7 +55,7 @@
         Daytime — Things We Might Do
         <div class="travel-section-rule"></div>
       </h3>
-      <p style="font-size:13px; color:var(--text); opacity:0.65; font-weight:300; line-height:1.8; margin-bottom:28px;">We'll finalize plans closer to the date based on who's joining and what people are up for. These are the kinds of things on our radar — expect a mix across the two days.</p>
+      <p class="travel-section-intro">We'll finalize plans closer to the date based on who's joining and what people are up for. These are the kinds of things on our radar — expect a mix across the two days.</p>
       <div class="travel-cards">
         <div class="travel-card">
           <img class="travel-card-image" src="old-goa.jpg" alt="Old Goa & Basilica of Bom Jesus">
@@ -148,6 +150,13 @@
   <div class="footer-date">November 27–28, 2026 · Goa, India</div>
   <div class="footer-motif">❋ ✦ ❋</div>
 </footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    nav.classList.toggle('open');
+  }
+</script>
 
 </body>
 </html>
