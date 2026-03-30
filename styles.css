@@ -808,6 +808,12 @@
 
   .travel-card-body {
     padding: 24px 24px 28px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .travel-card-body h4 {
+    min-height: 52px;
   }
 
   .travel-card.travel-card-simple {
@@ -855,6 +861,9 @@
     text-transform: uppercase;
     color: var(--palm-green);
     margin-bottom: 8px;
+    word-break: break-word;
+    hyphens: none;
+    line-height: 1.6;
   }
 
   .travel-tip-box p {
