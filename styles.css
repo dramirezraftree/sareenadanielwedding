@@ -61,14 +61,14 @@
 
   .nav-links {
     display: flex;
-    gap: 20px;
+    gap: 12px;
     list-style: none;
     flex-wrap: nowrap;
   }
 
   .nav-links a {
-    font-size: 8.5px;
-    letter-spacing: 0.12em;
+    font-size: 14px;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--text);
     text-decoration: none;
@@ -1498,8 +1498,7 @@
 
     /* GALLERY PAGE */
     .gallery-wrapper { padding: 0 8px 60px; }
-    .gallery-grid { grid-template-columns: 1fr 1fr; }
-    .gallery-grid > div { min-height: 200px; }
+    .gallery-wrapper div[style*="grid-template-columns"] { grid-template-columns: 1fr 1fr 1fr !important; height: auto !important; min-height: 120px; gap: 3px !important; margin-bottom: 3px !important; }
 
     /* HOME PAGE */
     .home-hero {
