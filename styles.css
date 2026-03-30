@@ -968,6 +968,15 @@
 
   .registry-card-icon { font-size: 40px; margin-bottom: 20px; }
 
+  .registry-card-ornament {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    color: var(--antique-gold);
+    opacity: 0.6;
+    margin-bottom: 20px;
+    display: block;
+  }
+
   .registry-card h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 28px;
