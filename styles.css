@@ -479,13 +479,14 @@
     grid-template-columns: 380px 1fr;
     min-height: 420px;
     background: #1c1e22;
+    align-items: stretch;
   }
 
   .event-card-photo {
     overflow: hidden;
     position: relative;
     flex-shrink: 0;
-    height: 420px;
+    align-self: stretch;
   }
 
   .event-card-photo img {
@@ -1261,10 +1262,12 @@
     .event-card {
       grid-template-columns: 1fr;
       min-height: unset;
+      align-items: unset;
     }
 
     .event-card-photo {
       height: 260px;
+      align-self: unset;
     }
 
     .event-card-body {
