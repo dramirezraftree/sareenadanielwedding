@@ -1070,6 +1070,15 @@
 
   .rsvp-placeholder-icon { font-size: 48px; margin-bottom: 20px; opacity: 0.4; }
 
+  .rsvp-placeholder-ornament {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    color: var(--antique-gold);
+    opacity: 0.4;
+    margin-bottom: 20px;
+    display: block;
+  }
+
   .rsvp-placeholder h3 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 28px;
