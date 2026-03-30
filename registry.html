@@ -10,9 +10,10 @@
 <body>
 
 <nav>
-  <a class="nav-monogram" href="home.html">S & D</a>
-  <ul class="nav-links">
-    <li><a href="home.html">Home</a></li>
+  <a class="nav-monogram" href="index.html">S & D</a>
+  <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
     <li><a href="concept.html">What We're Celebrating</a></li>
     <li><a href="prewedding.html">Pre-Wedding</a></li>
     <li><a href="events.html">Wedding Events</a></li>
@@ -26,7 +27,8 @@
 </nav>
 
 <main id="registry" class="page-content">
-<div class="page-header">
+
+  <div class="page-header">
     <p class="page-eyebrow">Gifts</p>
     <h2 class="page-title">Registry</h2>
     <div class="page-rule"></div>
@@ -37,19 +39,23 @@
   </div>
 
   <div class="registry-cards">
+
     <div class="registry-card">
-      <div class="registry-card-icon">🎁</div>
+      <div class="registry-card-ornament">❋</div>
       <h3>Registry</h3>
       <p>Our gift registry will be live soon. We'll update this page as soon as it's ready — check back closer to the wedding date.</p>
       <span class="btn-outline">Coming Soon</span>
     </div>
+
     <div class="registry-card">
-      <div class="registry-card-icon">🌏</div>
+      <div class="registry-card-ornament">✦</div>
       <h3>Honeymoon Fund</h3>
       <p>We're planning an adventure for after the wedding. If you'd like to contribute to our travels and memories, we'd be so touched.</p>
       <span class="btn-outline">Coming Soon</span>
     </div>
+
   </div>
+
 </main>
 
 <footer>
@@ -57,6 +63,13 @@
   <div class="footer-date">November 27–28, 2026 · Goa, India</div>
   <div class="footer-motif">❋ ✦ ❋</div>
 </footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    nav.classList.toggle('open');
+  }
+</script>
 
 </body>
 </html>
