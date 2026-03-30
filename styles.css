@@ -858,6 +858,12 @@
     padding: 28px 24px;
   }
 
+  .travel-card.travel-card-simple h4 {
+    min-height: 52px;
+    display: flex;
+    align-items: flex-start;
+  }
+
   .travel-card h4 {
     font-family: 'Cormorant Garamond', serif;
     font-size: 20px;
