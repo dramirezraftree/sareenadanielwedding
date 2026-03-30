@@ -61,14 +61,14 @@
 
   .nav-links {
     display: flex;
-    gap: 12px;
+    gap: 18px;
     list-style: none;
     flex-wrap: nowrap;
   }
 
   .nav-links a {
-    font-size: 14px;
-    letter-spacing: 0.06em;
+    font-size: 11px;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--text);
     text-decoration: none;
