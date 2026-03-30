@@ -133,13 +133,25 @@
 
   .home-hero {
     min-height: calc(100vh - var(--nav-h));
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+    padding: 60px 80px;
+    position: relative;
+  }
+
+  .home-hero-left {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    position: relative;
-    padding: 60px 40px;
+  }
+
+  .home-hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .home-hero::before {
@@ -300,6 +312,57 @@
     opacity: 0.12;
   }
 
+  /* Home info cards */
+  .home-info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .home-info-card {
+    padding: 20px 28px;
+    border: 1px solid rgba(184,149,42,0.25);
+    text-align: left;
+  }
+
+  .home-info-card-label {
+    font-size: 8px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--antique-gold);
+    margin-bottom: 8px;
+  }
+
+  .home-info-card p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: var(--text);
+    opacity: 0.75;
+    font-weight: 300;
+    margin-bottom: 12px;
+  }
+
+  .home-info-card p:last-child {
+    margin-bottom: 0;
+  }
+
+  .home-info-card-link {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--antique-gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(184,149,42,0.4);
+    padding-bottom: 1px;
+  }
+
+  .home-info-card-inline-link {
+    color: var(--antique-gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(184,149,42,0.4);
+  }
+
   /* ══════════════════════════════════════
      PAGE HEADER (shared)
   ══════════════════════════════════════ */
@@ -431,6 +494,7 @@
     overflow: hidden;
     position: relative;
     flex-shrink: 0;
+    height: 420px;
   }
 
   .event-card-photo img {
@@ -1139,8 +1203,16 @@
     .registry-hero { padding: 0 20px 40px; }
 
     /* HOME PAGE */
+    .home-hero {
+      grid-template-columns: 1fr;
+      padding: 40px 24px;
+      gap: 40px;
+    }
+    .home-hero-left { align-items: center; text-align: center; }
+    .home-hero-right { width: 100%; }
     .home-names { font-size: 48px; }
-    .home-hero { padding: 40px 24px; }
     .countdown { gap: 20px; }
     .countdown-num { font-size: 36px; }
+    .home-info-cards { max-width: 100%; }
+    .home-info-card { padding: 16px 20px; }
   }
