@@ -139,20 +139,7 @@
     justify-content: center;
     text-align: center;
     position: relative;
-    padding: 60px 80px;
-  }
-
-  .home-hero-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-  }
-
-  .home-hero-right {
-    width: 100%;
-    margin-top: 48px;
+    padding: 60px 40px;
   }
 
   .home-hero::before {
@@ -319,8 +306,8 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 16px;
     width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
+    max-width: 860px;
+    margin: 40px auto 0;
   }
 
   .home-info-card {
@@ -1134,6 +1121,26 @@
     letter-spacing: 0.05em;
   }
 
+  .travel-section-intro {
+    font-size: 13px;
+    color: var(--text);
+    opacity: 0.65;
+    font-weight: 300;
+    line-height: 1.8;
+    margin-bottom: 28px;
+  }
+
+  .page-intro {
+    font-size: 13px;
+    opacity: 0.6;
+    font-weight: 300;
+    margin-top: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+  }
+
   /* ══════════════════════════════════════
      CONCEPT PAGE
   ══════════════════════════════════════ */
@@ -1271,6 +1278,7 @@
     /* GENERAL LAYOUT */
     .events-grid { padding: 0 0 40px; }
     .page-header { padding: 48px 24px 32px; }
+    .page-intro { padding: 0 4px; }
     .concept-body { padding: 0 24px 60px; }
     .concept-lead { font-size: 22px; }
     .concept-closing { font-size: 18px; }
@@ -1280,11 +1288,14 @@
     .story-item { grid-template-columns: 80px 1px 1fr; }
     .story-timeline { padding: 40px 20px 80px; }
     .travel-sections { padding: 0 20px 60px; }
+    .travel-cards { grid-template-columns: 1fr; }
+    .travel-card-image { aspect-ratio: 16 / 9; }
     .faq-sections { padding: 0 20px 60px; }
     .registry-cards { padding: 0 20px 60px; }
     .rsvp-wrapper { padding: 0 20px 60px; }
     .dress-intro { padding: 0 20px 40px; }
     .registry-hero { padding: 0 20px 40px; }
+    .travel-section-title { font-size: 24px; }
 
     /* HOME PAGE */
     .home-hero {
