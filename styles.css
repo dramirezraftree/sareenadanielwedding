@@ -1190,6 +1190,13 @@
     letter-spacing: 0.05em;
   }
 
+  .faq-link {
+    color: var(--antique-gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(184,149,42,0.4);
+    cursor: pointer;
+  }
+
   .travel-section-intro {
     font-size: 13px;
     color: var(--text);
