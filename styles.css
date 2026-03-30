@@ -1470,7 +1470,8 @@
 
     /* GALLERY PAGE */
     .gallery-wrapper { padding: 0 8px 60px; }
-    .gallery-wrapper > div[style] { grid-template-columns: 1fr 1fr !important; height: auto !important; min-height: 180px; }
+    .gallery-wrapper > div[style] { grid-template-columns: 1fr 1fr !important; height: auto !important; }
+    .gallery-wrapper > div[style] > div { min-height: 180px; }
 
     /* HOME PAGE */
     .home-hero {
