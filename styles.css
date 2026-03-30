@@ -755,6 +755,44 @@
     font-weight: 300;
   }
 
+  .dress-card-header {
+    margin-bottom: 24px;
+  }
+
+  .dress-card-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 28px;
+  }
+
+  .dress-column-label {
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--antique-gold);
+    margin-bottom: 8px;
+  }
+
+  .dress-card-colors {
+    border-top: 1px solid rgba(184,149,42,0.15);
+    padding-top: 20px;
+  }
+
+  .dress-card-colors .dress-palette-label {
+    margin-bottom: 12px;
+  }
+
+  .dress-card-colors .dress-swatches {
+    flex-wrap: nowrap;
+    gap: 20px;
+  }
+
+  .dress-card-colors .swatch-color {
+    width: 44px;
+    height: 44px;
+  }
+
   /* ══════════════════════════════════════
      TRAVEL PAGE
   ══════════════════════════════════════ */
@@ -1295,6 +1333,9 @@
     .concept-lead { font-size: 22px; }
     .concept-closing { font-size: 18px; }
     .dress-events { grid-template-columns: 1fr; padding: 0 20px 60px; }
+    .dress-card-columns { grid-template-columns: 1fr; gap: 20px; }
+    .dress-card-colors .dress-swatches { flex-wrap: wrap; gap: 12px; }
+    .dress-card-colors .swatch-color { width: 36px; height: 36px; }
     .dress-general { grid-template-columns: 1fr; padding: 40px 28px; }
     .dress-general-title { grid-column: 1; }
     .story-item { grid-template-columns: 80px 1px 1fr; }
