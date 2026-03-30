@@ -1456,9 +1456,9 @@
     .concept-closing { font-size: 18px; }
     .dress-events { grid-template-columns: 1fr; padding: 0 20px 60px; }
     .dress-card-columns { grid-template-columns: 1fr; gap: 20px; }
-    .dress-card-colors .dress-swatches { flex-wrap: nowrap; gap: 8px; }
+    .dress-card-colors .dress-swatches { flex-wrap: nowrap; gap: 6px; justify-content: space-between; }
     .dress-card-colors .swatch-color { width: 28px; height: 28px; }
-    .dress-card-colors .swatch-name { font-size: 6px; max-width: 32px; }
+    .dress-card-colors .swatch-name { font-size: 5.5px; max-width: 36px; letter-spacing: 0; }
     .dress-general { grid-template-columns: 1fr; padding: 40px 28px; }
     .dress-general-title { grid-column: 1; }
     .story-item { grid-template-columns: 80px 1px 1fr; }
