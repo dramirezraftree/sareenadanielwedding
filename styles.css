@@ -1469,6 +1469,16 @@
     .home-hero {
       padding: 40px 24px;
     }
+    .home-hero-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
+    .countdown {
+      justify-content: center;
+    }
     .home-hero-right { margin-top: 32px; }
     .home-info-cards {
       grid-template-columns: 1fr;
