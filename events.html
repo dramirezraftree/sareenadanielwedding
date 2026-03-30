@@ -10,9 +10,10 @@
 <body>
 
 <nav>
-  <a class="nav-monogram" href="home.html">S & D</a>
-  <ul class="nav-links">
-    <li><a href="home.html">Home</a></li>
+  <a class="nav-monogram" href="index.html">S & D</a>
+  <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
     <li><a href="concept.html">What We're Celebrating</a></li>
     <li><a href="prewedding.html">Pre-Wedding</a></li>
     <li><a href="events.html" class="active-nav">Wedding Events</a></li>
@@ -26,7 +27,8 @@
 </nav>
 
 <main id="events" class="page-content">
-<div class="page-header">
+
+  <div class="page-header">
     <p class="page-eyebrow">The Weekend</p>
     <h2 class="page-title">Wedding Events</h2>
     <div class="page-rule"></div>
@@ -37,7 +39,7 @@
 
     <div class="event-card mehendi">
       <div class="event-card-photo">
-        <img class="event-card-photo" src="mehendi.jpg" alt="Mehendi">
+        <img src="mehendi.jpg" alt="Mehendi">
       </div>
       <div class="event-card-body">
         <div class="event-card-top">
@@ -60,7 +62,7 @@
 
     <div class="event-card sangeet">
       <div class="event-card-photo">
-        <img class="event-card-photo" src="sangeet.jpg" alt="Sangeet">
+        <img src="sangeet.jpg" alt="Sangeet">
       </div>
       <div class="event-card-body">
         <div class="event-card-top">
@@ -83,7 +85,7 @@
 
     <div class="event-card haldi">
       <div class="event-card-photo">
-        <<img class="event-card-photo" src="haldi.jpg" alt="Haldi">
+        <img src="haldi.jpg" alt="Haldi">
       </div>
       <div class="event-card-body">
         <div class="event-card-top">
@@ -106,7 +108,7 @@
 
     <div class="event-card wedding">
       <div class="event-card-photo">
-        <img class="event-card-photo" src="wedding-ceremony.jpg" alt="Wedding Ceremony">
+        <img src="wedding-ceremony.jpg" alt="Wedding Ceremony">
       </div>
       <div class="event-card-body">
         <div class="event-card-top">
@@ -129,7 +131,7 @@
 
     <div class="event-card reception">
       <div class="event-card-photo">
-        <img class="event-card-photo" src="reception.jpg" alt="Reception">
+        <img src="reception.jpg" alt="Reception">
       </div>
       <div class="event-card-body">
         <div class="event-card-top">
@@ -158,6 +160,13 @@
   <div class="footer-date">November 27–28, 2026 · Goa, India</div>
   <div class="footer-motif">❋ ✦ ❋</div>
 </footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    nav.classList.toggle('open');
+  }
+</script>
 
 </body>
 </html>
