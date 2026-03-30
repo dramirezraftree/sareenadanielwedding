@@ -10,9 +10,10 @@
 <body>
 
 <nav>
-  <a class="nav-monogram" href="home.html">S & D</a>
-  <ul class="nav-links">
-    <li><a href="home.html" class="active-nav">Home</a></li>
+  <a class="nav-monogram" href="index.html">S & D</a>
+  <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html" class="active-nav">Home</a></li>
     <li><a href="concept.html">What We're Celebrating</a></li>
     <li><a href="prewedding.html">Pre-Wedding</a></li>
     <li><a href="events.html">Wedding Events</a></li>
@@ -26,60 +27,68 @@
 </nav>
 
 <main id="home" class="page-content">
-<div class="home-hero">
-    <div class="home-ornament">✦</div>
-    <p class="home-eyebrow">We're getting married</p>
-    <h1 class="home-names">
-      <em>Sareena</em>
-      <span class="home-ampersand">&</span>
-      <span style="color: #2c4a7c;">Daniel</span>
-    </h1>
-    <p class="home-date">November 27 – 28, 2026 &nbsp;·&nbsp; Goa, India</p>
+  <div class="home-hero">
 
-    <div class="home-divider">
-      <div class="home-divider-line"></div>
-      <div class="home-divider-lotus">❋</div>
-      <div class="home-divider-line"></div>
+    <!-- Left column: names, countdown, RSVP button -->
+    <div class="home-hero-left">
+      <div class="home-ornament">✦</div>
+      <p class="home-eyebrow">We're getting married</p>
+      <h1 class="home-names">
+        <em>Sareena</em>
+        <span class="home-ampersand">&</span>
+        <span style="color: #2c4a7c;">Daniel</span>
+      </h1>
+      <p class="home-date">November 27 – 28, 2026 &nbsp;·&nbsp; Goa, India</p>
+
+      <div class="home-divider">
+        <div class="home-divider-line"></div>
+        <div class="home-divider-lotus">❋</div>
+        <div class="home-divider-line"></div>
+      </div>
+
+      <div class="countdown" id="countdown">
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-days">—</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-dot">·</div>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-hours">—</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <div class="countdown-dot">·</div>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-mins">—</span>
+          <span class="countdown-label">Minutes</span>
+        </div>
+      </div>
+
+      <a class="btn-primary" href="rsvp.html"><span>RSVP Now</span></a>
     </div>
 
-    <div class="countdown" id="countdown">
-      <div class="countdown-unit">
-        <span class="countdown-num" id="cd-days">—</span>
-        <span class="countdown-label">Days</span>
-      </div>
-      <div class="countdown-dot">·</div>
-      <div class="countdown-unit">
-        <span class="countdown-num" id="cd-hours">—</span>
-        <span class="countdown-label">Hours</span>
-      </div>
-      <div class="countdown-dot">·</div>
-      <div class="countdown-unit">
-        <span class="countdown-num" id="cd-mins">—</span>
-        <span class="countdown-label">Minutes</span>
+    <!-- Right column: info cards -->
+    <div class="home-hero-right">
+      <div class="home-info-cards">
+
+        <div class="home-info-card">
+          <div class="home-info-card-label">RSVP Deadline ✦</div>
+          <p>Kindly respond by <strong>May 15, 2026</strong>.</p>
+        </div>
+
+        <div class="home-info-card">
+          <div class="home-info-card-label">Pre-Wedding in Goa ✦</div>
+          <p>We're planning a few days in Goa before the wedding — exploring the sights, sharing meals, and taking advantage of the city's nightlife. If you'd like to join, let us know in the RSVP and we'll coordinate from there.</p>
+          <a href="prewedding.html" class="home-info-card-link">Learn more →</a>
+        </div>
+
+        <div class="home-info-card">
+          <div class="home-info-card-label">Limited Rooms ✦</div>
+          <p>We have a block of rooms reserved at The Windflower. Room assignments are made in the order RSVPs are received. See <a href="travel.html" class="home-info-card-inline-link">Travel & Accommodations</a> for details.</p>
+        </div>
+
       </div>
     </div>
 
-    <a class="btn-primary" href="rsvp.html"><span>RSVP Now</span></a>
-
-    <div style="margin-top:32px; display:flex; flex-direction:column; gap:12px; max-width:440px;">
-
-      <div style="padding:20px 28px; border:1px solid rgba(184,149,42,0.25); text-align:left;">
-        <div style="font-size:8px; letter-spacing:0.25em; text-transform:uppercase; color:var(--antique-gold); margin-bottom:8px;">RSVP Deadline ✦</div>
-        <p style="font-size:12px; line-height:1.8; color:var(--text); opacity:0.75; font-weight:300;">Kindly respond by <strong>May 15, 2026</strong>.</p>
-      </div>
-
-      <div style="padding:20px 28px; border:1px solid rgba(184,149,42,0.25); text-align:left;">
-        <div style="font-size:8px; letter-spacing:0.25em; text-transform:uppercase; color:var(--antique-gold); margin-bottom:8px;">Pre-Wedding in Goa ✦</div>
-        <p style="font-size:12px; line-height:1.8; color:var(--text); opacity:0.75; font-weight:300; margin-bottom:12px;">We're planning a few days in Goa before the wedding — exploring the sights, sharing meals, and taking advantage of the city's nightlife. If you'd like to join, let us know in the RSVP and we'll coordinate from there.</p>
-        <a href="prewedding.html" style="font-size:9px; letter-spacing:0.15em; text-transform:uppercase; color:var(--antique-gold); cursor:pointer; border-bottom:1px solid rgba(184,149,42,0.4); padding-bottom:1px;">Learn more →</a>
-      </div>
-
-      <div style="padding:20px 28px; border:1px solid rgba(184,149,42,0.25); text-align:left;">
-        <div style="font-size:8px; letter-spacing:0.25em; text-transform:uppercase; color:var(--antique-gold); margin-bottom:8px;">Limited Rooms ✦</div>
-        <p style="font-size:12px; line-height:1.8; color:var(--text); opacity:0.75; font-weight:300;">We have a block of rooms reserved at The Windflower. Room assignments are made in the order RSVPs are received. See <a href="travel.html" style="color:var(--antique-gold); cursor:pointer; border-bottom:1px solid rgba(184,149,42,0.4);">Travel & Accommodations</a> for details.</p>
-      </div>
-
-    </div>
   </div>
 
   <!-- Decorative tropical element -->
@@ -99,7 +108,13 @@
   <div class="footer-date">November 27–28, 2026 · Goa, India</div>
   <div class="footer-motif">❋ ✦ ❋</div>
 </footer>
+
 <script>
+  function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    nav.classList.toggle('open');
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
     function updateCountdown() {
       const wedding = new Date('2026-11-27T10:00:00+05:30');
@@ -122,5 +137,6 @@
     setInterval(updateCountdown, 60000);
   });
 </script>
+
 </body>
 </html>
