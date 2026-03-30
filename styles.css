@@ -1,4 +1,4 @@
-  :root {
+:root {
     --cream: #fdf6ed;
     --lotus-pink: #d4748a;
     --hibiscus: #e05c6a;
@@ -91,6 +91,24 @@
   .nav-links a:hover { color: var(--antique-gold); }
   .nav-links a:hover::after { right: 0; }
 
+  /* Active nav link */
+  .nav-links a.active-nav {
+    color: var(--antique-gold);
+  }
+  .nav-links a.active-nav::after {
+    right: 0;
+  }
+
+  /* Hamburger button - hidden on desktop */
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--antique-gold);
+  }
+
   /* ── PAGES ── */
   .page-content {
     display: block;
@@ -98,7 +116,6 @@
     padding-top: var(--nav-h);
     animation: fadeUp 0.6s ease both;
   }
-
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
@@ -125,7 +142,6 @@
     padding: 60px 40px;
   }
 
-  /* Decorative tropical arch background */
   .home-hero::before {
     content: '';
     position: absolute;
@@ -275,7 +291,6 @@
   .btn-primary:hover::before { transform: scaleX(1); }
   .btn-primary span { position: relative; z-index: 1; }
 
-  /* Decorative palms SVG */
   .home-palms {
     position: absolute;
     bottom: 0;
@@ -286,7 +301,7 @@
   }
 
   /* ══════════════════════════════════════
-     OUR STORY PAGE
+     PAGE HEADER (shared)
   ══════════════════════════════════════ */
   .page-header {
     padding: 80px 60px 48px;
@@ -318,6 +333,9 @@
     margin: 24px auto 0;
   }
 
+  /* ══════════════════════════════════════
+     STORY PAGE
+  ══════════════════════════════════════ */
   .story-timeline {
     max-width: 760px;
     margin: 0 auto;
@@ -400,15 +418,6 @@
     margin: 0 auto;
   }
 
-  .events-grid .event-card:nth-child(4),
-  .events-grid .event-card:nth-child(5) {
-    grid-column: span 1;
-  }
-
-  /* Reset explicit grid positioning */
-  .events-grid .event-card:nth-child(4) { grid-column: auto; grid-row: auto; }
-  .events-grid .event-card:nth-child(5) { grid-column: auto; grid-row: auto; }
-
   .event-card {
     position: relative;
     overflow: hidden;
@@ -444,15 +453,12 @@
     gap: 28px;
   }
 
-  .event-card.mehendi::before { background: #2a2d26; }
-  .event-card.sangeet::before { background: #25283a; }
-  .event-card.haldi::before   { background: #2e2318; }
-  .event-card.wedding::before { background: #2a2020; }
-  .event-card.reception::before { background: #1a2626; }
+  .event-card.mehendi { background: #2a2d26; }
+  .event-card.sangeet { background: #25283a; }
+  .event-card.haldi   { background: #2e2318; }
+  .event-card.wedding { background: #2a2020; }
+  .event-card.reception { background: #1a2626; }
 
-  .event-card > * { position: relative; z-index: 1; }
-
-  /* Top row: just title */
   .event-card-top {
     display: flex;
     flex-direction: column;
@@ -472,13 +478,11 @@
     flex-wrap: wrap;
   }
 
-  /* Divider */
   .event-card-divider {
     height: 1px;
     background: rgba(255,255,255,0.25);
   }
 
-  /* Description row */
   .event-description {
     font-size: 13px;
     line-height: 1.9;
@@ -566,10 +570,6 @@
     margin: 0 auto;
     padding: 0 40px 80px;
   }
-
-  /* Reset any column overrides */
-  .dress-card.wedding-ceremony { grid-column: auto; }
-  .dress-card.reception        { grid-column: auto; }
 
   .dress-card {
     border: 1px solid rgba(184,149,42,0.2);
@@ -994,7 +994,7 @@
   .footer-motif { font-size: 20px; opacity: 0.3; }
 
   /* ══════════════════════════════════════
-     DECORATIVE SVG ELEMENTS
+     DECORATIVE ELEMENTS
   ══════════════════════════════════════ */
   .lotus-divider {
     text-align: center;
@@ -1066,56 +1066,81 @@
     letter-spacing: 0.05em;
   }
 
+  /* ══════════════════════════════════════
+     MOBILE (max-width: 768px)
+  ══════════════════════════════════════ */
   @media (max-width: 768px) {
-    nav { padding: 0 20px; }
-    .nav-links { gap: 16px; }
-    .nav-links a { font-size: 8px; letter-spacing: 0.12em; }
-    .events-grid { grid-template-columns: 1fr; }
-    .dress-events { grid-template-columns: 1fr; }
+
+    /* NAV */
+    nav {
+      padding: 0 20px;
+      flex-wrap: wrap;
+      height: auto;
+      min-height: var(--nav-h);
+    }
+
+    .hamburger {
+      display: block;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      padding: 10px 0 20px;
+      background: rgba(253, 246, 237, 0.98);
+    }
+
+    .nav-links.open {
+      display: flex;
+    }
+
+    .nav-links li {
+      padding: 10px 0;
+    }
+
+    .nav-links a {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+    }
+
+    /* EVENTS PAGE */
+    .event-card {
+      grid-template-columns: 1fr;
+      min-height: unset;
+    }
+
+    .event-card-photo {
+      height: 260px;
+    }
+
+    .event-card-body {
+      padding: 32px 24px;
+    }
+
+    .event-name {
+      font-size: 36px;
+    }
+
+    /* GENERAL LAYOUT */
+    .events-grid { padding: 0 0 40px; }
+    .page-header { padding: 48px 24px 32px; }
+    .dress-events { grid-template-columns: 1fr; padding: 0 20px 60px; }
     .dress-general { grid-template-columns: 1fr; padding: 40px 28px; }
     .dress-general-title { grid-column: 1; }
     .story-item { grid-template-columns: 80px 1px 1fr; }
+    .story-timeline { padding: 40px 20px 80px; }
+    .travel-sections { padding: 0 20px 60px; }
+    .faq-sections { padding: 0 20px 60px; }
+    .registry-cards { padding: 0 20px 60px; }
+    .rsvp-wrapper { padding: 0 20px 60px; }
+    .dress-intro { padding: 0 20px 40px; }
+    .registry-hero { padding: 0 20px 40px; }
+
+    /* HOME PAGE */
     .home-names { font-size: 48px; }
+    .home-hero { padding: 40px 24px; }
     .countdown { gap: 20px; }
     .countdown-num { font-size: 36px; }
   }
-
-
-/* Active nav link */
-.nav-links a.active-nav {
-  color: var(--antique-gold);
-}
-.nav-links a.active-nav::after {
-  right: 0;
-}
-
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: #c9a96e;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-  }
-
-  .nav-links.open {
-    display: flex;
-  }
-
-  .nav-links li {
-    padding: 10px 0;
-  }
-}
