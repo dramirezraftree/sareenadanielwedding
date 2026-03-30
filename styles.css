@@ -1202,6 +1202,15 @@
   }
 
   /* ══════════════════════════════════════
+     GALLERY PAGE
+  ══════════════════════════════════════ */
+  .gallery-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px 100px;
+  }
+
+  /* ══════════════════════════════════════
      CONCEPT PAGE
   ══════════════════════════════════════ */
   .concept-body {
@@ -1442,6 +1451,10 @@
     .venue-showcase-title { font-size: 26px; }
     .venue-photo-grid { grid-template-columns: 1fr; }
     .venue-photo-cell { aspect-ratio: 4 / 3; }
+
+    /* GALLERY PAGE */
+    .gallery-wrapper { padding: 0 8px 60px; }
+    .gallery-wrapper > div[style] { grid-template-columns: 1fr 1fr !important; height: auto !important; min-height: 180px; }
 
     /* HOME PAGE */
     .home-hero {
