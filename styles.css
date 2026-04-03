@@ -925,8 +925,8 @@
   }
 
   .travel-tip-box p + p {
-  margin-top: 0.5rem !important;
-  padding-top: 0.5rem;
+  margin-top: 0.3rem !important;
+  padding-top: 0.3rem;
   position: relative;
 }
 
