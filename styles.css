@@ -971,6 +971,13 @@
     transition: all 0.3s ease;
     background: white;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .registry-card p {
+    flex: 1;
   }
 
   .registry-card:hover {
