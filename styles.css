@@ -836,6 +836,14 @@
     margin-top: 24px;
   }
 
+  #prewedding .travel-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #prewedding .travel-section:last-child .travel-cards {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+
   .travel-card {
     background: white;
     border: 1px solid rgba(184,149,42,0.15);
