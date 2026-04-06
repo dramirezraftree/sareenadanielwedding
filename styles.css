@@ -922,27 +922,12 @@
     color: var(--text);
     opacity: 0.75;
     font-weight: 300;
+    margin-bottom: 16px;
   }
 
-  .travel-tip-box p + p {
-  margin-top: 0.3rem !important;
-  padding-top: 0.3rem;
-  position: relative;
-}
-
-.travel-tip-box p + p::before {
-  content: '◆';
-  display: block;
-  text-align: center;
-  color: #b8952a;
-  font-size: 0.5rem;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.5rem;
-  opacity: 0.6;
-}
-
-
-
+  .travel-tip-box p:last-child {
+    margin-bottom: 0;
+  }
 
   /* ══════════════════════════════════════
      REGISTRY PAGE
