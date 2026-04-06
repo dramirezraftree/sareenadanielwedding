@@ -1504,6 +1504,8 @@
     .story-timeline { padding: 40px 20px 80px; }
     .travel-sections { padding: 0 20px 60px; }
     .travel-cards { grid-template-columns: 1fr; }
+    #prewedding .travel-cards { grid-template-columns: 1fr; }
+    #prewedding .travel-section:last-child .travel-cards { grid-template-columns: 1fr; }
     .travel-card-image { aspect-ratio: 16 / 9; }
     .faq-sections { padding: 0 20px 60px; }
     .registry-cards { padding: 0 20px 60px; }
