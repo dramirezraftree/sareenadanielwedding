@@ -1518,7 +1518,9 @@
 
     /* GALLERY PAGE */
     .gallery-wrapper { padding: 0 8px 60px; }
-    .gallery-wrapper div[style*="grid-template-columns"] { grid-template-columns: 1fr 1fr 1fr !important; height: auto !important; min-height: 120px; gap: 3px !important; margin-bottom: 3px !important; }
+    .gallery-wrapper div[style*="grid-template-columns"] { grid-template-columns: 1fr 1fr !important; height: auto !important; gap: 3px !important; margin-bottom: 3px !important; }
+    .gallery-wrapper div[style*="grid-template-columns"] > div { min-height: 180px; }
+    .gallery-wrapper div[style*="height"] { height: auto !important; }
 
     /* HOME PAGE */
     .home-hero {
