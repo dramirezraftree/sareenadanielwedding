@@ -472,14 +472,52 @@
     margin: 0 auto;
   }
 
+  .events-day-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 48px 40px 28px;
+  }
+
+  .events-day-rule {
+    flex: 1;
+    height: 1px;
+    background: rgba(184,149,42,0.25);
+  }
+
+  .events-day-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+  }
+
+  .events-day-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--deep);
+    letter-spacing: 0.02em;
+  }
+
+  .events-day-date {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--antique-gold);
+  }
+
   .event-card {
     position: relative;
     overflow: hidden;
     display: grid;
-    grid-template-columns: 380px 1fr;
+    grid-template-columns: 360px 1fr;
     min-height: 420px;
-    background: #1c1e22;
+    background: #fdf9f4;
     align-items: stretch;
+    border: 1px solid rgba(184,149,42,0.15);
+    margin-bottom: 16px;
   }
 
   .event-card-photo {
@@ -487,6 +525,7 @@
     position: relative;
     flex-shrink: 0;
     align-self: stretch;
+    padding: 24px;
   }
 
   .event-card-photo img {
@@ -495,6 +534,7 @@
     object-fit: cover;
     object-position: center;
     display: block;
+    border-radius: 4px;
     transition: transform 0.5s ease;
   }
 
@@ -503,17 +543,17 @@
   }
 
   .event-card-body {
-    padding: 52px 56px;
+    padding: 48px 52px 48px 28px;
     display: flex;
     flex-direction: column;
     gap: 28px;
   }
 
-  .event-card.mehendi { background: #2a2d26; }
-  .event-card.sangeet { background: #25283a; }
-  .event-card.haldi   { background: #2e2318; }
-  .event-card.wedding { background: #2a2020; }
-  .event-card.reception { background: #1a2626; }
+  .event-card.mehendi { background: rgba(168,196,122,0.12); }
+  .event-card.sangeet { background: rgba(168,168,224,0.12); }
+  .event-card.haldi   { background: rgba(240,184,48,0.10); }
+  .event-card.wedding { background: rgba(232,114,74,0.10); }
+  .event-card.reception { background: rgba(184,192,200,0.12); }
 
   .event-card-top {
     display: flex;
@@ -536,15 +576,16 @@
 
   .event-card-divider {
     height: 1px;
-    background: rgba(255,255,255,0.25);
+    background: rgba(58,46,40,0.12);
   }
 
   .event-description {
     font-size: 13px;
     line-height: 1.9;
-    color: rgba(255,255,255,0.88);
+    color: var(--text);
     font-weight: 300;
     max-width: 820px;
+    opacity: 0.85;
   }
 
   .event-icon {
@@ -557,7 +598,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 48px;
     font-weight: 300;
-    color: white;
+    color: var(--deep);
     line-height: 1;
     margin-bottom: 12px;
   }
@@ -566,7 +607,7 @@
     font-size: 9px;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.75);
+    color: var(--antique-gold);
     margin-bottom: 0;
   }
 
@@ -581,8 +622,9 @@
     align-items: center;
     gap: 10px;
     font-size: 12px;
-    color: rgba(255,255,255,0.9);
+    color: var(--text);
     font-weight: 300;
+    opacity: 0.75;
   }
 
   .event-detail-icon { font-size: 14px; opacity: 0.8; }
