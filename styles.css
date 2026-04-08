@@ -1514,17 +1514,20 @@
     /* EVENTS PAGE */
     .event-card {
       grid-template-columns: 1fr;
-      min-height: unset;
+      height: auto;
       align-items: unset;
     }
 
     .event-card-photo {
       height: 260px;
       align-self: unset;
+      padding: 16px 16px 0;
     }
 
     .event-card-body {
-      padding: 32px 24px;
+      padding: 28px 24px 36px;
+      gap: 20px;
+      overflow: visible;
     }
 
     .event-name {
