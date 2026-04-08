@@ -487,17 +487,19 @@
 
   .events-day-label {
     display: flex;
-    flex-direction: column;
-    gap: 4px;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 16px;
     white-space: nowrap;
   }
 
   .events-day-number {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 28px;
+    font-size: 42px;
     font-weight: 400;
     color: var(--deep);
     letter-spacing: 0.02em;
+    line-height: 1;
   }
 
   .events-day-date {
@@ -505,6 +507,7 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--antique-gold);
+    white-space: nowrap;
   }
 
   .event-card {
