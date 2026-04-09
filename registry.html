@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
 <nav>
   <a class="nav-monogram" href="index.html">S & D</a>
   <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
@@ -25,51 +24,36 @@
     <li><a href="rsvp.html">RSVP</a></li>
   </ul>
 </nav>
-
 <main id="registry" class="page-content">
-
   <div class="page-header">
     <p class="page-eyebrow">Gifts</p>
     <h2 class="page-title">Registry</h2>
     <div class="page-rule"></div>
   </div>
-
   <div class="registry-hero">
-    <p>Your presence at our wedding is truly the greatest gift we could ask for. There's no expectation to bring a gift, but if you'd like to celebrate with something more, we're in the process of setting up our registry and will share details here soon.</p>
+    <p>Your presence at our wedding is truly the greatest gift we could ask for. If you'd like to celebrate with something more, we'd love for you to take a look at our registry.</p>
   </div>
-
-  <div class="registry-cards">
-
-    <div class="registry-card">
-      <div class="registry-card-ornament">❋</div>
-      <h3>Registry</h3>
-      <p>Our gift registry will be live soon. We'll update this page as soon as it's ready — check back closer to the wedding date.</p>
-      <span class="btn-outline">Coming Soon</span>
+  <div style="max-width: 560px; margin: 0 auto; padding: 0 40px 80px;">
+    <div class="registry-card" style="position: relative; overflow: hidden;" onclick="window.open('https://www.zola.com/registry/YOUR-REGISTRY-SLUG', '_blank')">
+      <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(to right, var(--coral), var(--antique-gold), var(--pistachio));"></div>
+      <div class="registry-card-icon">❋ ✦ ❋</div>
+      <h3>Sareena & Daniel's Registry</h3>
+      <p>We're planning to head to Australia for our honeymoon! If you'd like to contribute to our travels and memories, or if you'd like to help us furnish our kitchen and home, we'd be touched.</p>
+      <span class="btn-outline">View Our Registry →</span>
+      <p style="margin-top: 16px; font-size: 11px; color: var(--text); opacity: 0.5; letter-spacing: 0.05em;">You'll be taken to our Zola page</p>
     </div>
-
-    <div class="registry-card">
-      <div class="registry-card-ornament">✦</div>
-      <h3>Honeymoon Fund</h3>
-      <p>We're planning to head to Australia for our honeymoon! If you'd like to contribute to our travels and memories, we'd be touched.</p>
-      <span class="btn-outline">Coming Soon</span>
-    </div>
-
   </div>
-
 </main>
-
 <footer>
   <div class="footer-names">Sareena & Daniel</div>
   <div class="footer-date">November 27–28, 2026 · Goa, India</div>
   <div class="footer-motif">❋ ✦ ❋</div>
 </footer>
-
 <script>
   function toggleMenu() {
     const nav = document.getElementById('nav-links');
     nav.classList.toggle('open');
   }
 </script>
-
 </body>
 </html>
