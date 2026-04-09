@@ -515,7 +515,7 @@
     overflow: hidden;
     display: grid;
     grid-template-columns: 360px 1fr;
-    height: 420px;
+    height: 480px;
     background: #fdf9f4;
     align-items: stretch;
     border: 1px solid rgba(184,149,42,0.15);
