@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're Invited — Sareena & Daniel</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@1,600;1,700&family=Josefin+Sans:wght@300;400&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #e8e0d4; font-family: 'Josefin Sans', sans-serif; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px 80px; }
+
+    #private-msg { display: none; text-align: center; margin-top: 40vh; }
+    #private-msg p { font-family: 'Cormorant', serif; font-size: 22px; font-style: italic; color: #3a2e28; opacity: 0.5; }
+
+    #invite-wrapper { display: none; flex-direction: column; align-items: center; width: 100%; max-width: 480px; }
+
+    .for-label { font-family: 'Josefin Sans', sans-serif; font-size: 9px; letter-spacing: 0.35em; text-transform: uppercase; color: #e8724a; margin-bottom: 8px; opacity: 0; animation: fadeUp 1s ease forwards 0.3s; }
+    .guest-name-display { font-family: 'Cormorant', serif; font-size: 36px; font-weight: 700; font-style: italic; color: #2a1f1a; margin-bottom: 36px; line-height: 1.2; text-align: center; opacity: 0; animation: fadeUp 1s ease forwards 0.6s; }
+
+    #envelope-container { width: 100%; opacity: 0; animation: fadeUp 1s ease forwards 1s; }
+    #envelope-container svg { width: 100%; height: auto; display: block; }
+
+    .open-prompt { margin-top: 20px; font-family: 'Josefin Sans', sans-serif; font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: #b8952a; cursor: pointer; border-bottom: 1px solid rgba(184,149,42,0.4); padding-bottom: 4px; opacity: 0; animation: fadeUp 0.8s ease forwards 1.8s; transition: opacity 0.2s; }
+    .open-prompt:hover { opacity: 0.7; }
+
+    #pages-container { display: none; flex-direction: column; align-items: center; width: 100%; opacity: 0; }
+    #pages-container.visible { display: flex; animation: fadeIn 2.4s ease forwards; }
+
+    .invite-page { position: relative; width: 100%; aspect-ratio: 17 / 22; background: #fdf6ed; border: 1px solid rgba(184,149,42,0.18); box-shadow: 0 4px 28px rgba(0,0,0,0.10); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 32px; margin-bottom: 16px; }
+
+    .card-placeholder { width: 100%; height: 100%; position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .placeholder-label { font-family: 'Josefin Sans', sans-serif; font-size: 8px; letter-spacing: 0.35em; text-transform: uppercase; color: #b8952a; opacity: 0.4; margin-bottom: 10px; }
+    .placeholder-note { font-family: 'Cormorant', serif; font-size: 16px; font-style: italic; color: #3a2e28; opacity: 0.25; }
+
+    .scroll-cue { display: flex; flex-direction: column; align-items: center; gap: 4px; margin: 4px 0 28px; }
+    .scroll-cue-line { width: 1px; height: 32px; background: linear-gradient(to bottom, rgba(184,149,42,0.5), transparent); }
+    .scroll-cue-chevron { width: 10px; height: 10px; border-right: 1px solid rgba(184,149,42,0.55); border-bottom: 1px solid rgba(184,149,42,0.55); transform: rotate(45deg); animation: bounce 1.6s ease-in-out infinite; }
+    .scroll-cue-chevron:nth-child(3) { margin-top: -6px; opacity: 0.4; animation-delay: 0.15s; }
+
+    .page-footer { margin-top: 24px; font-family: 'Josefin Sans', sans-serif; font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; }
+    .page-footer a { color: #b8952a; text-decoration: none; }
+
+    .website-btn {
+      display: inline-block;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #2a1f1a;
+      background: transparent;
+      border: 1px solid rgba(184,149,42,0.5);
+      text-decoration: none;
+      padding: 13px 28px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .website-btn:hover { background: #b8952a; color: white; }
+    .btn-top { margin-bottom: 28px; opacity: 0; animation: fadeUp 1s ease forwards 0.3s; }
+    .btn-bottom { margin-top: 32px; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideDown { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(120%); } }
+    @keyframes bounce { 0%, 100% { transform: rotate(45deg) translateY(0); } 50% { transform: rotate(45deg) translateY(5px); } }
+  </style>
+</head>
+<body>
+
+  <div id="private-msg"><p>This page is private.</p></div>
+
+  <div id="invite-wrapper">
+    <a href="https://danielandsareena.com" class="website-btn btn-top">Access the Wedding Website Here</a>
+    <p class="for-label">For</p>
+    <p class="guest-name-display" id="guest-display"></p>
+
+    <div id="envelope-container">
+      <svg viewBox="0 0 680 420" xmlns="http://www.w3.org/2000/svg">
+        <rect x="60" y="60" width="560" height="300" rx="4" fill="#F5F0E8" stroke="#C9B87A" stroke-width="1"/>
+        <rect x="72" y="72" width="536" height="276" rx="2" fill="none" stroke="#C9B87A" stroke-width="0.6" opacity="0.6"/>
+        <rect x="78" y="78" width="524" height="264" rx="2" fill="none" stroke="#C9B87A" stroke-width="0.3" opacity="0.35"/>
+        <polygon points="72,84 78,78 84,84 78,90" fill="#C9B87A" opacity="0.6"/>
+        <polygon points="596,84 602,78 608,84 602,90" fill="#C9B87A" opacity="0.6"/>
+        <polygon points="72,336 78,330 84,336 78,342" fill="#C9B87A" opacity="0.6"/>
+        <polygon points="596,336 602,330 608,336 602,342" fill="#C9B87A" opacity="0.5"/>
+        <polygon points="340,72 344,78 340,84 336,78" fill="#C9B87A" opacity="0.5"/>
+        <polygon points="340,336 344,342 340,348 336,342" fill="#C9B87A" opacity="0.5"/>
+        <polygon points="72,210 78,204 84,210 78,216" fill="#C9B87A" opacity="0.5"/>
+        <polygon points="596,210 602,204 608,210 602,216" fill="#C9B87A" opacity="0.5"/>
+        <path d="M90 75 Q150 70 200 75 Q250 80 340 74 Q430 68 480 75 Q530 82 590 75" fill="none" stroke="#A8893A" stroke-width="0.5" opacity="0.4"/>
+        <path d="M90 345 Q150 350 200 345 Q250 340 340 346 Q430 352 480 345 Q530 338 590 345" fill="none" stroke="#A8893A" stroke-width="0.5" opacity="0.4"/>
+        <path d="M88 82 Q98 105 92 128 Q86 152 91 168" fill="none" stroke="#A8893A" stroke-width="0.8"/>
+        <path d="M88 82 Q115 75 140 79" fill="none" stroke="#A8893A" stroke-width="0.8"/>
+        <path d="M93 98 Q76 90 74 101 Q86 108 93 98Z" fill="#A8893A" opacity="0.75"/>
+        <path d="M91 118 Q106 112 109 123 Q97 127 91 118Z" fill="#A8893A" opacity="0.75"/>
+        <path d="M89 138 Q74 135 73 146 Q87 148 89 138Z" fill="#A8893A" opacity="0.75"/>
+        <path d="M90 155 Q105 151 107 161 Q95 164 90 155Z" fill="#A8893A" opacity="0.6"/>
+        <circle cx="91" cy="170" r="3.5" fill="#A8893A" opacity="0.6"/>
+        <path d="M104 77 Q107 66 115 68 Q113 78 104 77Z" fill="#A8893A" opacity="0.7"/>
+        <path d="M120 78 Q125 67 133 70 Q130 80 120 78Z" fill="#A8893A" opacity="0.65"/>
+        <path d="M136 79 Q143 70 150 74 Q146 83 136 79Z" fill="#A8893A" opacity="0.55"/>
+        <path d="M592 82 Q582 105 588 128 Q594 152 589 168" fill="none" stroke="#A8893A" stroke-width="0.8"/>
+        <path d="M592 82 Q565 75 540 79" fill="none" stroke="#A8893A" stroke-width="0.8"/>
+        <path d="M587 98 Q604 90 606 101 Q594 108 587 98Z" fill="#A8893A" opacity="0.75"/>
+        <path d="M589 118 Q574 112 571 123 Q583 127 589 118Z" fill="#A8893A" opacity="0.75"/>
+        <path d="M591 138 Q606 135 607 146 Q593 148 591 138Z" fill="#A8893A" opacity="0.75"/>
+        <path d="M590 155 Q575 151 573 161 Q585 164 590 155Z" fill="#A8893A" opacity="0.6"/>
+        <circle cx="589" cy="170" r="3.5" fill="#A8893A" opacity="0.6"/>
+        <path d="M576 77 Q573 66 565 68 Q567 78 576 77Z" fill="#A8893A" opacity="0.7"/>
+        <path d="M560 78 Q555 67 547 70 Q550 80 560 78Z" fill="#A8893A" opacity="0.65"/>
+        <path d="M544 79 Q537 70 530 74 Q534 83 544 79Z" fill="#A8893A" opacity="0.55"/>
+        <path d="M88 338 Q105 330 125 334" fill="none" stroke="#A8893A" stroke-width="0.8"/>
+        <path d="M105 332 Q108 321 116 323 Q113 333 105 332Z" fill="#A8893A" opacity="0.55"/>
+        <path d="M121 334 Q126 324 134 327 Q130 336 121 334Z" fill="#A8893A" opacity="0.45"/>
+        <circle cx="88" cy="342" r="2.5" fill="#A8893A" opacity="0.4"/>
+        <path d="M592 338 Q575 330 555 334" fill="none" stroke="#A8893A" stroke-width="0.8"/>
+        <path d="M575 332 Q572 321 564 323 Q567 333 575 332Z" fill="#A8893A" opacity="0.55"/>
+        <path d="M559 334 Q554 324 546 327 Q550 336 559 334Z" fill="#A8893A" opacity="0.45"/>
+        <circle cx="592" cy="342" r="2.5" fill="#A8893A" opacity="0.4"/>
+        <circle cx="510" cy="115" r="32" fill="none" stroke="#8B7355" stroke-width="0.9" opacity="0.55"/>
+        <circle cx="510" cy="115" r="26" fill="none" stroke="#8B7355" stroke-width="0.4" opacity="0.35"/>
+        <text x="510" y="107" text-anchor="middle" fill="#6B5A3A" font-family="Georgia,serif" font-size="6.5" opacity="0.7" letter-spacing="1.2">GOA · INDIA</text>
+        <text x="510" y="118" text-anchor="middle" fill="#6B5A3A" font-family="Georgia,serif" font-size="6" opacity="0.65" letter-spacing="0.5">NOV 2026</text>
+        <text x="510" y="128" text-anchor="middle" fill="#6B5A3A" font-family="Georgia,serif" font-size="5.5" opacity="0.55">· · ·</text>
+        <path d="M546 97 Q554 101 549 106 Q557 110 552 115 Q560 119 555 124 Q563 128 558 133" fill="none" stroke="#8B7355" stroke-width="0.7" opacity="0.45"/>
+        <path d="M553 97 Q561 101 556 106 Q564 110 559 115 Q567 119 562 124 Q570 128 565 133" fill="none" stroke="#8B7355" stroke-width="0.7" opacity="0.45"/>
+        <path d="M560 97 Q568 101 563 106 Q571 110 566 115 Q574 119 569 124 Q577 128 572 133" fill="none" stroke="#8B7355" stroke-width="0.7" opacity="0.45"/>
+        <!-- Decorative lines around name area -->
+        <line x1="180" y1="198" x2="300" y2="198" stroke="#C9B87A" stroke-width="0.5" opacity="0.6"/>
+        <line x1="380" y1="198" x2="500" y2="198" stroke="#C9B87A" stroke-width="0.5" opacity="0.6"/>
+        <circle cx="340" cy="198" r="3" fill="none" stroke="#C9B87A" stroke-width="0.6" opacity="0.7"/>
+        <circle cx="340" cy="198" r="1.2" fill="#C9B87A" opacity="0.6"/>
+        <line x1="180" y1="258" x2="300" y2="258" stroke="#C9B87A" stroke-width="0.5" opacity="0.6"/>
+        <line x1="380" y1="258" x2="500" y2="258" stroke="#C9B87A" stroke-width="0.5" opacity="0.6"/>
+        <circle cx="340" cy="258" r="3" fill="none" stroke="#C9B87A" stroke-width="0.6" opacity="0.7"/>
+        <circle cx="340" cy="258" r="1.2" fill="#C9B87A" opacity="0.6"/>
+        <!-- Name rendered by JS below -->
+        <text id="env-name-1" x="340" y="215" text-anchor="middle" fill="#2a1f1a" font-family="Georgia,serif" font-size="15" font-style="italic" letter-spacing="0.8"></text>
+        <text id="env-name-amp" x="340" y="230" text-anchor="middle" fill="#2a1f1a" font-family="Georgia,serif" font-size="11" font-style="italic" opacity="0.6" letter-spacing="0.5"></text>
+        <text id="env-name-2" x="340" y="245" text-anchor="middle" fill="#2a1f1a" font-family="Georgia,serif" font-size="15" font-style="italic" letter-spacing="0.8"></text>
+      </svg>
+    </div>
+
+    <p class="open-prompt" id="open-btn" onclick="revealCards()">Open your invitation ↓</p>
+
+    <div id="pages-container">
+
+      <div class="invite-page">
+        <!-- SWAP: <img src="cover.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" alt="Cover"> -->
+        <div class="card-placeholder">
+          <p class="placeholder-label">Cover</p>
+          <p class="placeholder-note">Invitation cover coming soon</p>
+        </div>
+      </div>
+
+      <div class="scroll-cue">
+        <div class="scroll-cue-line"></div>
+        <div class="scroll-cue-chevron"></div>
+        <div class="scroll-cue-chevron"></div>
+      </div>
+
+      <div class="invite-page">
+        <!-- SWAP: <img src="mehendi-sangeet.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" alt="Mehendi & Sangeet"> -->
+        <div class="card-placeholder">
+          <p class="placeholder-label">Mehendi &amp; Sangeet</p>
+          <p class="placeholder-note">November 27, 2026</p>
+        </div>
+      </div>
+
+      <div class="scroll-cue">
+        <div class="scroll-cue-line"></div>
+        <div class="scroll-cue-chevron"></div>
+        <div class="scroll-cue-chevron"></div>
+      </div>
+
+      <div class="invite-page">
+        <!-- SWAP: <img src="haldi-wedding.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" alt="Haldi & Wedding"> -->
+        <div class="card-placeholder">
+          <p class="placeholder-label">Haldi &amp; Wedding</p>
+          <p class="placeholder-note">November 28, 2026</p>
+        </div>
+      </div>
+
+      <div class="scroll-cue">
+        <div class="scroll-cue-line"></div>
+        <div class="scroll-cue-chevron"></div>
+        <div class="scroll-cue-chevron"></div>
+      </div>
+
+      <div class="invite-page">
+        <!-- SWAP: <img src="page-4.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" alt="Page 4"> -->
+        <div class="card-placeholder">
+          <p class="placeholder-label">Page 4</p>
+          <p class="placeholder-note">Coming soon</p>
+        </div>
+      </div>
+
+      <p class="page-footer"><a href="https://danielandsareena.com">danielandsareena.com</a></p>
+      <a href="https://danielandsareena.com" class="website-btn btn-bottom">Access the Wedding Website Here</a>
+
+    </div>
+  </div>
+
+  <script>
+    // ============================================
+    // GUEST LIST — one line per household
+    // ============================================
+    const guests = {
+      "test": "Sareena & Daniel",
+      // Add your guests here — e.g.:
+      // "mark-meyer": "Mark Meyer",
+      // "clare-ramirez-raftree-and-brandon-de-jesus": "Clare Ramirez-Raftree and Brandon de Jesus",
+    };
+
+    // Separators that indicate two people in one name
+    const COUPLE_SEPARATORS = [' and ', ' & ', ' + '];
+
+    // Split a name into two envelope lines if it contains a couple separator
+    function splitForEnvelope(name) {
+      for (const sep of COUPLE_SEPARATORS) {
+        const idx = name.indexOf(sep);
+        if (idx !== -1) {
+          return [
+            name.substring(0, idx).trim(),
+            name.substring(idx + sep.length).trim()
+          ];
+        }
+      }
+      return [name, ""]; // single person — one line, second line empty
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get('guest');
+    const guestName = guests[token];
+
+    if (!guestName) {
+      document.getElementById('private-msg').style.display = 'block';
+    } else {
+      document.getElementById('invite-wrapper').style.display = 'flex';
+      document.getElementById('guest-display').textContent = guestName;
+
+      const el1   = document.getElementById('env-name-1');
+      const elAmp = document.getElementById('env-name-amp');
+      const el2   = document.getElementById('env-name-2');
+
+      // Always one line, centered. Font shrinks for long names.
+      const nameLen  = guestName.length;
+      const fontSize = nameLen > 34 ? 10 : nameLen > 26 ? 12 : nameLen > 18 ? 14 : 15;
+
+      el1.setAttribute('y', '230');
+      el1.setAttribute('font-size', fontSize);
+      el1.textContent   = guestName;
+      elAmp.textContent = '';
+      el2.textContent   = '';
+
+      // ============================================
+      // TRACKING — uncomment and replace URL when ready
+      // fetch('YOUR_TRACKING_URL?guest=' + encodeURIComponent(token));
+      // ============================================
+    }
+
+    function revealCards() {
+      const env = document.getElementById('envelope-container');
+      const btn = document.getElementById('open-btn');
+      const pages = document.getElementById('pages-container');
+      btn.style.display = 'none';
+      env.style.animation = 'slideDown 1s ease forwards';
+      setTimeout(() => {
+        env.style.display = 'none';
+        pages.classList.add('visible');
+      }, 900);
+    }
+  </script>
+
+</body>
+</html>
