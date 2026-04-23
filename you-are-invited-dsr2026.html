@@ -15,32 +15,7 @@
 
     #invite-wrapper { display: none; flex-direction: column; align-items: center; width: 100%; max-width: 480px; }
 
-    .for-label { font-family: 'Josefin Sans', sans-serif; font-size: 9px; letter-spacing: 0.35em; text-transform: uppercase; color: #e8724a; margin-bottom: 8px; opacity: 0; animation: fadeUp 1s ease forwards 0.3s; }
-    .guest-name-display { font-family: 'Cormorant', serif; font-size: 36px; font-weight: 700; font-style: italic; color: #2a1f1a; margin-bottom: 36px; line-height: 1.2; text-align: center; opacity: 0; animation: fadeUp 1s ease forwards 0.6s; }
-
-    #envelope-container { width: 100%; opacity: 0; animation: fadeUp 1s ease forwards 1s; }
-    #envelope-container svg { width: 100%; height: auto; display: block; }
-
-    .open-prompt { margin-top: 20px; font-family: 'Josefin Sans', sans-serif; font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: #b8952a; cursor: pointer; border-bottom: 1px solid rgba(184,149,42,0.4); padding-bottom: 4px; opacity: 0; animation: fadeUp 0.8s ease forwards 1.8s; transition: opacity 0.2s; }
-    .open-prompt:hover { opacity: 0.7; }
-
-    #pages-container { display: none; flex-direction: column; align-items: center; width: 100%; opacity: 0; }
-    #pages-container.visible { display: flex; animation: fadeIn 2.4s ease forwards; }
-
-    .invite-page { position: relative; width: 100%; aspect-ratio: 17 / 22; background: #fdf6ed; border: 1px solid rgba(184,149,42,0.18); box-shadow: 0 4px 28px rgba(0,0,0,0.10); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 32px; margin-bottom: 16px; }
-
-    .card-placeholder { width: 100%; height: 100%; position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-    .placeholder-label { font-family: 'Josefin Sans', sans-serif; font-size: 8px; letter-spacing: 0.35em; text-transform: uppercase; color: #b8952a; opacity: 0.4; margin-bottom: 10px; }
-    .placeholder-note { font-family: 'Cormorant', serif; font-size: 16px; font-style: italic; color: #3a2e28; opacity: 0.25; }
-
-    .scroll-cue { display: flex; flex-direction: column; align-items: center; gap: 4px; margin: 4px 0 28px; }
-    .scroll-cue-line { width: 1px; height: 32px; background: linear-gradient(to bottom, rgba(184,149,42,0.5), transparent); }
-    .scroll-cue-chevron { width: 10px; height: 10px; border-right: 1px solid rgba(184,149,42,0.55); border-bottom: 1px solid rgba(184,149,42,0.55); transform: rotate(45deg); animation: bounce 1.6s ease-in-out infinite; }
-    .scroll-cue-chevron:nth-child(3) { margin-top: -6px; opacity: 0.4; animation-delay: 0.15s; }
-
-    .page-footer { margin-top: 24px; font-family: 'Josefin Sans', sans-serif; font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; }
-    .page-footer a { color: #b8952a; text-decoration: none; }
-
+    /* ── Top website button ── */
     .website-btn {
       display: inline-block;
       font-family: 'Josefin Sans', sans-serif;
@@ -59,10 +34,57 @@
     .btn-top { margin-bottom: 28px; opacity: 0; animation: fadeUp 1s ease forwards 0.3s; }
     .btn-bottom { margin-top: 32px; }
 
+    /* ── For / name ── */
+    .for-label { font-family: 'Josefin Sans', sans-serif; font-size: 9px; letter-spacing: 0.35em; text-transform: uppercase; color: #e8724a; margin-bottom: 8px; opacity: 0; animation: fadeUp 1s ease forwards 0.3s; }
+    .guest-name-display { font-family: 'Cormorant', serif; font-size: 36px; font-weight: 700; font-style: italic; color: #2a1f1a; margin-bottom: 36px; line-height: 1.2; text-align: center; opacity: 0; animation: fadeUp 1s ease forwards 0.6s; }
+
+    /* ── Envelope ── */
+    #envelope-container { width: 100%; opacity: 0; animation: fadeUp 1s ease forwards 1s; }
+    #envelope-container svg { width: 100%; height: auto; display: block; }
+
+    .open-prompt { margin-top: 20px; font-family: 'Josefin Sans', sans-serif; font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: #b8952a; cursor: pointer; border-bottom: 1px solid rgba(184,149,42,0.4); padding-bottom: 4px; opacity: 0; animation: fadeUp 0.8s ease forwards 1.8s; transition: opacity 0.2s; }
+    .open-prompt:hover { opacity: 0.7; }
+
+    /* ── Single invite card ── */
+    #pages-container { display: none; flex-direction: column; align-items: center; width: 100%; opacity: 0; }
+    #pages-container.visible { display: flex; animation: fadeIn 2.4s ease forwards; }
+
+    .invite-page {
+      position: relative;
+      width: 100%;
+      /* 2857:4000 ≈ 5:7 ratio */
+      aspect-ratio: 2857 / 4000;
+      background: #ffffff;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.12);
+      overflow: hidden;
+    }
+
+    /* The actual invite image — swap placeholder div for this img tag:
+       <img src="Wedding_Invitation.png" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:block;" alt="Invitation">
+    */
+    .card-placeholder {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #fdf6ed;
+      border: 1px solid rgba(184,149,42,0.18);
+    }
+    .placeholder-label { font-family: 'Josefin Sans', sans-serif; font-size: 8px; letter-spacing: 0.35em; text-transform: uppercase; color: #b8952a; opacity: 0.4; margin-bottom: 10px; }
+    .placeholder-note { font-family: 'Cormorant', serif; font-size: 16px; font-style: italic; color: #3a2e28; opacity: 0.25; }
+
+    /* ── Footer ── */
+    .page-footer { margin-top: 24px; font-family: 'Josefin Sans', sans-serif; font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; }
+    .page-footer a { color: #b8952a; text-decoration: none; }
+
+    /* ── Animations ── */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes slideDown { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(120%); } }
-    @keyframes bounce { 0%, 100% { transform: rotate(45deg) translateY(0); } 50% { transform: rotate(45deg) translateY(5px); } }
   </style>
 </head>
 <body>
@@ -70,10 +92,12 @@
   <div id="private-msg"><p>This page is private.</p></div>
 
   <div id="invite-wrapper">
+
     <a href="https://danielandsareena.com" class="website-btn btn-top">Access the Wedding Website Here</a>
     <p class="for-label">For</p>
     <p class="guest-name-display" id="guest-display"></p>
 
+    <!-- Envelope -->
     <div id="envelope-container">
       <svg viewBox="0 0 680 420" xmlns="http://www.w3.org/2000/svg">
         <rect x="60" y="60" width="560" height="300" rx="4" fill="#F5F0E8" stroke="#C9B87A" stroke-width="1"/>
@@ -125,7 +149,6 @@
         <path d="M546 97 Q554 101 549 106 Q557 110 552 115 Q560 119 555 124 Q563 128 558 133" fill="none" stroke="#8B7355" stroke-width="0.7" opacity="0.45"/>
         <path d="M553 97 Q561 101 556 106 Q564 110 559 115 Q567 119 562 124 Q570 128 565 133" fill="none" stroke="#8B7355" stroke-width="0.7" opacity="0.45"/>
         <path d="M560 97 Q568 101 563 106 Q571 110 566 115 Q574 119 569 124 Q577 128 572 133" fill="none" stroke="#8B7355" stroke-width="0.7" opacity="0.45"/>
-        <!-- Decorative lines around name area -->
         <line x1="180" y1="198" x2="300" y2="198" stroke="#C9B87A" stroke-width="0.5" opacity="0.6"/>
         <line x1="380" y1="198" x2="500" y2="198" stroke="#C9B87A" stroke-width="0.5" opacity="0.6"/>
         <circle cx="340" cy="198" r="3" fill="none" stroke="#C9B87A" stroke-width="0.6" opacity="0.7"/>
@@ -134,71 +157,28 @@
         <line x1="380" y1="258" x2="500" y2="258" stroke="#C9B87A" stroke-width="0.5" opacity="0.6"/>
         <circle cx="340" cy="258" r="3" fill="none" stroke="#C9B87A" stroke-width="0.6" opacity="0.7"/>
         <circle cx="340" cy="258" r="1.2" fill="#C9B87A" opacity="0.6"/>
-        <!-- Name rendered by JS below -->
         <text id="env-name-1" x="340" y="215" text-anchor="middle" fill="#2a1f1a" font-family="Georgia,serif" font-size="15" font-style="italic" letter-spacing="0.8"></text>
         <text id="env-name-amp" x="340" y="230" text-anchor="middle" fill="#2a1f1a" font-family="Georgia,serif" font-size="11" font-style="italic" opacity="0.6" letter-spacing="0.5"></text>
         <text id="env-name-2" x="340" y="245" text-anchor="middle" fill="#2a1f1a" font-family="Georgia,serif" font-size="15" font-style="italic" letter-spacing="0.8"></text>
       </svg>
     </div>
 
-    <p class="open-prompt" id="open-btn" onclick="revealCards()">Open your invitation ↓</p>
+    <p class="open-prompt" id="open-btn" onclick="revealCard()">Open your invitation ↓</p>
 
+    <!-- Single invite card -->
     <div id="pages-container">
 
       <div class="invite-page">
-        <!-- SWAP: <img src="cover.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" alt="Cover"> -->
-        <div class="card-placeholder">
-          <p class="placeholder-label">Cover</p>
-          <p class="placeholder-note">Invitation cover coming soon</p>
-        </div>
-      </div>
-
-      <div class="scroll-cue">
-        <div class="scroll-cue-line"></div>
-        <div class="scroll-cue-chevron"></div>
-        <div class="scroll-cue-chevron"></div>
-      </div>
-
-      <div class="invite-page">
-        <!-- SWAP: <img src="mehendi-sangeet.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" alt="Mehendi & Sangeet"> -->
-        <div class="card-placeholder">
-          <p class="placeholder-label">Mehendi &amp; Sangeet</p>
-          <p class="placeholder-note">November 27, 2026</p>
-        </div>
-      </div>
-
-      <div class="scroll-cue">
-        <div class="scroll-cue-line"></div>
-        <div class="scroll-cue-chevron"></div>
-        <div class="scroll-cue-chevron"></div>
-      </div>
-
-      <div class="invite-page">
-        <!-- SWAP: <img src="haldi-wedding.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" alt="Haldi & Wedding"> -->
-        <div class="card-placeholder">
-          <p class="placeholder-label">Haldi &amp; Wedding</p>
-          <p class="placeholder-note">November 28, 2026</p>
-        </div>
-      </div>
-
-      <div class="scroll-cue">
-        <div class="scroll-cue-line"></div>
-        <div class="scroll-cue-chevron"></div>
-        <div class="scroll-cue-chevron"></div>
-      </div>
-
-      <div class="invite-page">
-        <!-- SWAP: <img src="page-4.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" alt="Page 4"> -->
-        <div class="card-placeholder">
-          <p class="placeholder-label">Page 4</p>
-          <p class="placeholder-note">Coming soon</p>
-        </div>
+        <img src="Wedding_Invitation.png"
+             style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:block;"
+             alt="Sareena & Daniel Wedding Invitation">
       </div>
 
       <p class="page-footer"><a href="https://danielandsareena.com">danielandsareena.com</a></p>
       <a href="https://danielandsareena.com" class="website-btn btn-bottom">Access the Wedding Website Here</a>
 
     </div>
+
   </div>
 
   <script>
@@ -207,27 +187,9 @@
     // ============================================
     const guests = {
       "test": "Sareena & Daniel",
-      // Add your guests here — e.g.:
       // "mark-meyer": "Mark Meyer",
       // "clare-ramirez-raftree-and-brandon-de-jesus": "Clare Ramirez-Raftree and Brandon de Jesus",
     };
-
-    // Separators that indicate two people in one name
-    const COUPLE_SEPARATORS = [' and ', ' & ', ' + '];
-
-    // Split a name into two envelope lines if it contains a couple separator
-    function splitForEnvelope(name) {
-      for (const sep of COUPLE_SEPARATORS) {
-        const idx = name.indexOf(sep);
-        if (idx !== -1) {
-          return [
-            name.substring(0, idx).trim(),
-            name.substring(idx + sep.length).trim()
-          ];
-        }
-      }
-      return [name, ""]; // single person — one line, second line empty
-    }
 
     const params = new URLSearchParams(window.location.search);
     const token = params.get('guest');
@@ -243,7 +205,6 @@
       const elAmp = document.getElementById('env-name-amp');
       const el2   = document.getElementById('env-name-2');
 
-      // Always one line, centered. Font shrinks for long names.
       const nameLen  = guestName.length;
       const fontSize = nameLen > 34 ? 10 : nameLen > 26 ? 12 : nameLen > 18 ? 14 : 15;
 
@@ -259,9 +220,9 @@
       // ============================================
     }
 
-    function revealCards() {
-      const env = document.getElementById('envelope-container');
-      const btn = document.getElementById('open-btn');
+    function revealCard() {
+      const env   = document.getElementById('envelope-container');
+      const btn   = document.getElementById('open-btn');
       const pages = document.getElementById('pages-container');
       btn.style.display = 'none';
       env.style.animation = 'slideDown 1s ease forwards';
