@@ -1595,3 +1595,27 @@
     .countdown-num { font-size: 36px; }
     .home-info-card { padding: 16px 20px; }
   }
+
+  /* ══════════════════════════════════════
+     DESKTOP READABILITY BUMP (min-width: 769px)
+  ══════════════════════════════════════ */
+  @media (min-width: 769px) {
+    .story-text          { font-size: 15px; }
+    .event-description   { font-size: 15px; }
+    .event-detail        { font-size: 14px; }
+    .faq-a               { font-size: 15px; }
+    .faq-q               { font-size: 22px; }
+    .dress-note          { font-size: 14px; }
+    .dress-tip p         { font-size: 15px; }
+    .dress-intro p       { font-size: 16px; }
+    .travel-card p       { font-size: 14px; }
+    .travel-tip-box p    { font-size: 15px; }
+    .travel-section-intro { font-size: 15px; }
+    .home-info-card p    { font-size: 15px; }
+    .registry-hero p     { font-size: 16px; }
+    .registry-card p     { font-size: 14px; }
+    .concept-text        { font-size: 16px; }
+    .venue-showcase-desc { font-size: 15px; }
+    .rsvp-note p         { font-size: 14px; }
+    .page-intro          { font-size: 15px; }
+  }
