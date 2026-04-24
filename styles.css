@@ -156,14 +156,7 @@
   .home-ornament {
     color: var(--antique-gold);
     font-size: 32px;
-    opacity: 0.6;
     margin-bottom: 24px;
-    animation: float 4s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
   }
 
   .home-eyebrow {
@@ -713,7 +706,6 @@
     margin-bottom: 8px;
   }
 
-  /* Theme name — second dress-event-time in each card */
   .dress-card-header .dress-event-time:last-child {
     color: #a0a8b0;
     margin-bottom: 20px;
@@ -1477,7 +1469,6 @@
   ══════════════════════════════════════ */
   @media (max-width: 768px) {
 
-    /* NAV */
     nav {
       padding: 0 20px;
       flex-wrap: wrap;
@@ -1485,9 +1476,7 @@
       min-height: var(--nav-h);
     }
 
-    .hamburger {
-      display: block;
-    }
+    .hamburger { display: block; }
 
     .nav-links {
       display: none;
@@ -1498,20 +1487,10 @@
       background: rgba(253, 246, 237, 0.98);
     }
 
-    .nav-links.open {
-      display: flex;
-    }
+    .nav-links.open { display: flex; }
+    .nav-links li { padding: 10px 0; }
+    .nav-links a { font-size: 10px; letter-spacing: 0.12em; }
 
-    .nav-links li {
-      padding: 10px 0;
-    }
-
-    .nav-links a {
-      font-size: 10px;
-      letter-spacing: 0.12em;
-    }
-
-    /* EVENTS PAGE */
     .event-card {
       grid-template-columns: 1fr;
       height: auto;
@@ -1530,11 +1509,8 @@
       overflow: visible;
     }
 
-    .event-name {
-      font-size: 36px;
-    }
+    .event-name { font-size: 36px; }
 
-    /* GENERAL LAYOUT */
     .events-grid { padding: 0 0 40px; }
     .page-header { padding: 48px 24px 32px; }
     .page-intro { padding: 0 4px; }
@@ -1566,16 +1542,12 @@
     .venue-photo-grid { grid-template-columns: 1fr; }
     .venue-photo-cell { aspect-ratio: 4 / 3; }
 
-    /* GALLERY PAGE */
     .gallery-wrapper { padding: 0 8px 60px; }
     .gallery-wrapper div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; height: auto !important; gap: 3px !important; margin-bottom: 3px !important; }
     .gallery-wrapper div[style*="grid-template-columns"] > div { min-height: 240px; }
     .gallery-wrapper div[style*="height"] { height: auto !important; }
 
-    /* HOME PAGE */
-    .home-hero {
-      padding: 40px 24px;
-    }
+    .home-hero { padding: 40px 24px; }
     .home-hero-left {
       display: flex;
       flex-direction: column;
@@ -1583,13 +1555,9 @@
       text-align: center;
       width: 100%;
     }
-    .countdown {
-      justify-content: center;
-    }
+    .countdown { justify-content: center; }
     .home-hero-right { margin-top: 32px; }
-    .home-info-cards {
-      grid-template-columns: 1fr;
-    }
+    .home-info-cards { grid-template-columns: 1fr; }
     .home-names { font-size: 48px; }
     .countdown { gap: 20px; }
     .countdown-num { font-size: 36px; }
