@@ -46,7 +46,7 @@
     .open-prompt:hover { opacity: 0.7; }
 
     /* ── Single invite card ── */
-    #pages-container { display: none; flex-direction: column; align-items: center; width: 100%; opacity: 0; }
+    #pages-container { display: none; flex-direction: column; align-items: center; width: 100%; max-width: 480px; opacity: 0; }
     #pages-container.visible { display: flex; animation: fadeIn 2.4s ease forwards; }
 
     .invite-page {
@@ -59,6 +59,9 @@
       overflow: hidden;
     }
 
+    /* The actual invite image — swap placeholder div for this img tag:
+       <img src="Wedding_Invitation.png" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:block;" alt="Invitation">
+    */
     .card-placeholder {
       width: 100%;
       height: 100%;
@@ -83,9 +86,10 @@
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes slideDown { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(120%); } }
 
-    /* ── Desktop: wider envelope + card ── */
+    /* ── Desktop: wider envelope ── */
     @media (min-width: 769px) {
-      #invite-wrapper { max-width: 720px; }
+      #invite-wrapper { max-width: min(800px, 72vw); }
+      .guest-name-display { font-size: 44px; }
     }
   </style>
 </head>
@@ -143,11 +147,11 @@
         <path d="M575 332 Q572 321 564 323 Q567 333 575 332Z" fill="#A8893A" opacity="0.55"/>
         <path d="M559 334 Q554 324 546 327 Q550 336 559 334Z" fill="#A8893A" opacity="0.45"/>
         <circle cx="592" cy="342" r="2.5" fill="#A8893A" opacity="0.4"/>
+        <image href="https://danielandsareena.com/lotus-wide.png" x="250" y="84" width="180" height="57" opacity="0.85"/>
         <circle cx="510" cy="115" r="32" fill="none" stroke="#8B7355" stroke-width="0.9" opacity="0.55"/>
         <circle cx="510" cy="115" r="26" fill="none" stroke="#8B7355" stroke-width="0.4" opacity="0.35"/>
-        <text x="510" y="107" text-anchor="middle" fill="#6B5A3A" font-family="Georgia,serif" font-size="6.5" opacity="0.7" letter-spacing="1.2">GOA · INDIA</text>
-        <text x="510" y="118" text-anchor="middle" fill="#6B5A3A" font-family="Georgia,serif" font-size="6" opacity="0.65" letter-spacing="0.5">NOV 2026</text>
-        <text x="510" y="128" text-anchor="middle" fill="#6B5A3A" font-family="Georgia,serif" font-size="5.5" opacity="0.55">· · ·</text>
+        <text x="510" y="113" text-anchor="middle" fill="#6B5A3A" font-family="Georgia,serif" font-size="6.5" opacity="0.7" letter-spacing="1.2">GOA · INDIA</text>
+        <text x="510" y="123" text-anchor="middle" fill="#6B5A3A" font-family="Georgia,serif" font-size="6" opacity="0.65" letter-spacing="0.8">NOV 2026</text>
         <path d="M546 97 Q554 101 549 106 Q557 110 552 115 Q560 119 555 124 Q563 128 558 133" fill="none" stroke="#8B7355" stroke-width="0.7" opacity="0.45"/>
         <path d="M553 97 Q561 101 556 106 Q564 110 559 115 Q567 119 562 124 Q570 128 565 133" fill="none" stroke="#8B7355" stroke-width="0.7" opacity="0.45"/>
         <path d="M560 97 Q568 101 563 106 Q571 110 566 115 Q574 119 569 124 Q577 128 572 133" fill="none" stroke="#8B7355" stroke-width="0.7" opacity="0.45"/>
